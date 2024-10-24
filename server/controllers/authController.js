@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 const login = async (req, res) => {
     try {
@@ -13,7 +13,7 @@ const login = async (req, res) => {
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(404).json({ success: false, error: "Wrong Password" });
+            return res.status(401).json({ success: false, error: "Wrong Password" });
         }
 
         const token = jwt.sign(

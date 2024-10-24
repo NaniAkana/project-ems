@@ -12,7 +12,7 @@ const Detail = () => {
         const fetchLeave = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:4000/api/leave/detail/${id}`, {
+                    `https://projectserver-api.vercel.app/api/leave/detail/${id}`, {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,
                         }

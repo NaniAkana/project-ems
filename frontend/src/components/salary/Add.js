@@ -37,7 +37,7 @@ const Add = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                `http://localhost:4000/api/salary/add`,
+                `https://projectserver-api.vercel.app/api/salary/add`,
                 salary,
                 {
                     headers: {

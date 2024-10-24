@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv'; // Import dotenv
+
 import authrouter from './routes/auth.js';
 import employeeRouter from './routes/employee.js';
 import departmentRouter from './routes/department.js';
@@ -9,10 +11,18 @@ import settingRouter from './routes/setting.js';
 import dashboardRouter from './routes/dashboard.js';
 import connectToDatabase from './db/db.js';
 
-connectToDatabase();
+// Load environment variables
+dotenv.config();
+
 const app = express();
 
-app.use(cors());
+connectToDatabase();
+
+app.use(cors({
+    origin: "https://projectfrontend-ems.vercel.app/login",
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(express.static('public/uploads'));
 app.use('/api/auth', authrouter);

@@ -18,7 +18,7 @@ const EditDepartment = () => {
           setDepLoading(true);
           try {
             const response = await axios.get(
-              `http://localhost:4000/api/department/${id}`,
+              `https://projectserver-api.vercel.app/api/department/${id}`,
               {
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -45,7 +45,7 @@ const EditDepartment = () => {
         setErrorMessage(''); 
     
         try {
-          const response = await axios.put(`http://localhost:4000/api/department/${id}`, department, {
+          const response = await axios.put(`https://projectserver-api.vercel.app/api/department/${id}`, department, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
             }

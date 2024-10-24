@@ -22,7 +22,7 @@ const AddDepartment = () => {
     setErrorMessage(''); 
 
     try {
-      const response = await axios.post('http://localhost:4000/api/department/add', department, {
+      const response = await axios.post('https://projectserver-api.vercel.app/api/department/add', department, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

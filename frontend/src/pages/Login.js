@@ -20,7 +20,7 @@ import { useAuth } from '../context/AuthContext'
         
 
         try{
-            const response =await axios.post("http://localhost:4000/api/auth/login",{email,password});
+            const response =await axios.post("https://projectserver-api.vercel.app/api/auth/login",{email,password});
             if(response.data.success){
                 login(response.data.user)
                 localStorage.setItem("token",response.data.token)

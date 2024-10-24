@@ -32,7 +32,7 @@ const Edit = () => {
 
             try {
                 const response = await axios.get(
-                    `http://localhost:4000/api/employee/${id}`,
+                    `https://projectserver-api.vercel.app/api/employee/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,

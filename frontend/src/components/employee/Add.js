@@ -36,7 +36,7 @@ const Add = () => {
             formDataObj.append(key,formData[key])
         })
         try {
-            const response = await axios.post('http://localhost:4000/api/employee/add', formDataObj, {
+            const response = await axios.post('https://projectserver-api.vercel.app/api/employee/add', formDataObj, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
               }

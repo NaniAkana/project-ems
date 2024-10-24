@@ -5,9 +5,8 @@ import connectToDatabase from './db/db.js';
 const userRegister = async () => {
     try {
         console.log("Connecting to database...");
-        connectToDatabase();
+       await connectToDatabase();
 
-        // Check if the user already exists
         const existingUser = await User.findOne({ email: "naniakana567@gmail.com" });
         if (existingUser) {
             console.log("User already exists");
